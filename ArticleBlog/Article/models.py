@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
-class Article(models):
+class Article(models.Model):
     """
     文章类型：
         推荐
