@@ -13,13 +13,13 @@ class Article(models.Model):
         转载
     推荐
     """
-    articleType = [
+    article_type = [
         ("selfDiary", "个人日记"),
         ("skillDiary", "学习笔记"),
         ("skillArticle", "技术文章"),
         ("diary", "个人简介"),
     ]
-    articleFamily = [
+    article_family = [
         ("diary", "原创"),
         ("diary", "转载"),
     ]
@@ -30,8 +30,8 @@ class Article(models.Model):
     content = RichTextField(verbose_name="文章内容")
     picture = models.ImageField(verbose_name="文章图片", upload_to="images")
     favor = models.IntegerField(default = 0,verbose_name = "点赞数")
-    articleType = models.CharField(max_length = 32,verbose_name = "文章类型",choices = articleType,default = "个人日记",)
-    articleFamily = models.CharField(max_length = 32,verbose_name = "文章类型",choices = articleFamily,default = "原创",)
+    articleType = models.CharField(max_length = 32,verbose_name = "文章类型",choices = article_type,default = "个人日记",)
+    articleFamily = models.CharField(max_length = 32,verbose_name = "文章类型",choices = article_family,default = "原创",)
     recommend = models.BooleanField(verbose_name="推荐")
 
 

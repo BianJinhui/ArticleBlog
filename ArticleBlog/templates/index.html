@@ -46,7 +46,7 @@
         <h3 class="tit">点击排行</h3>
         <ul class="rank">
             {% for article in articles %}
-              <li><a href="/jstt/bj/2017-07-13/784.html" title="【{{ article.get_articleFamily_display }}】{{ article.title }}" target="_blank">【{{ article.get_articleFamily_display }}】{{ article.title }}</a></li>
+              <li><a href="/articles/{{ article.id }}/" title="【{{ article.get_articleFamily_display }}】{{ article.title }}" target="_blank">【{{ article.get_articleFamily_display }}】{{ article.title }}</a></li>
             {% endfor %}
         </ul>
       </div>

@@ -25,7 +25,10 @@ urlpatterns += [
     path('index/', index),
     path('diary/', diary),
     path('myPhoto/', myPhoto),
-    path('selfDiary/', selfDiary),
-    path('skillDiary/', skillDiary),
-    path('skillArticle/', skillArticle)
+    re_path('article_list/(?P<types>\w+)/',articleList),
+    re_path('article_list/(?P<types>\w+)/(?P<page>\d+)/', articleList),
+    re_path('articles/(?P<id>\d+)/', articles)
+    # path('selfDiary/', selfDiary),
+    # path('skillDiary/', skillDiary),
+    # path('skillArticle/', skillArticle)
 ]
