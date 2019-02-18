@@ -28,7 +28,7 @@ class Article(models.Model):
     time = models.DateField(verbose_name = "发表时间")
     discription = RichTextField(verbose_name="文章描述")
     content = RichTextField(verbose_name="文章内容")
-    picture = models.ImageField(verbose_name="文章图片")
+    picture = models.ImageField(verbose_name="文章图片", upload_to="images")
     favor = models.IntegerField(default = 0,verbose_name = "点赞数")
     articleType = models.CharField(max_length = 32,verbose_name = "文章类型",choices = articleType,default = "个人日记",)
     articleFamily = models.CharField(max_length = 32,verbose_name = "文章类型",choices = articleFamily,default = "原创",)
