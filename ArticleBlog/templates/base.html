@@ -2,7 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>边进辉-个人博客</title>
+<title>
+    {% block tiltle %}
+        边进辉-个人博客
+    {% endblock %}
+</title>
 <meta name="keywords" content="边进辉-个人博客" />
 <meta name="description" content="边进辉-个人博客" />
 <link href="/static/css/base.css" rel="stylesheet">
@@ -20,7 +24,13 @@
   <header>
     <div class="headtop"></div>
     <div class="contenttop">
-      <div class="logo f_l">边进辉-个人博客</div>
+      <div class="logo f_l">
+          {% if title %}
+            {{ title }}
+          {% else %}
+            边进辉-个人博客
+          {% endif %}
+      </div>
       <div class="search f_r">
         <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
           <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
@@ -34,20 +44,20 @@
       <nav>
         <div  class="navigation">
           <ul class="menu">
-            <li><a href="index.html">网站首页</a></li>
-            <li><a href="#">关于我</a>
+            <li><a href="/index/">网站首页</a></li>
+            <li><a href="/diary/">关于我</a>
               <ul>
-                <li><a href="about.html">个人简介</a></li>
-                <li><a href="listpic.html">个人相册</a></li>
+                <li><a href="/diary/">个人简介</a></li>
+                <li><a href="/myPhoto/">个人相册</a></li>
               </ul>
             </li>
-            <li><a href="#">我的日记</a>
+            <li><a href="/selfDiary/">我的日记</a>
               <ul>
-                <li><a href="newslistpic.html">个人日记</a></li>
-                <li><a href="newslistpic.html">学习笔记</a></li>
+                <li><a href="/selfDiary/">个人日记</a></li>
+                <li><a href="/skillDiary/">学习笔记</a></li>
               </ul>
             </li>
-            <li><a href="newslistpic.html">技术文章</a> </li>
+            <li><a href="/skillArticle/">技术文章</a> </li>
             <li><a href="#">给我留言</a> </li>
           </ul>
         </div>

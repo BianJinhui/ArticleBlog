@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Article.views import Base
+from Article.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', Base),
+]
+#博客路由部分
+urlpatterns += [
+    path('index/', index),
+    path('diary/', diary),
+    path('myPhoto/', myPhoto),
+    path('selfDiary/', selfDiary),
+    path('skillDiary/', skillDiary),
+    path('skillArticle/', skillArticle)
 ]
